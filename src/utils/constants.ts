@@ -24,15 +24,44 @@ export const SKILLS = {
 export const PROJECTS = [
   {
     id: '1',
-    title: 'Application SaaS B2B',
-    description: "Plateforme de gestion d'entreprise avec dashboard analytics en temps réel.",
-    longDescription: "Une solution complète de gestion d'entreprise avec tableaux de bord personnalisables, analyses en temps réel, et intégrations API avancées.",
-    technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-    github: 'https://github.com/yourusername/project1',
-    demo: 'https://project1.demo.com',
+    title: 'FreeTube - Plateforme de partage vidéo',
+    description: "Alternative française à YouTube avec système complet de gestion vidéo.",
+    longDescription: "Développement d'un MVP full-stack avec gestion de chaînes, vidéos, playlists, commentaires, statistiques et système de recommandations.",
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Docker'],
+    image: '/freetube.jpg',
+    github: 'https://github.com/theayoub49/freetube',
+    demo: 'https://freetube.demo.com',
     featured: true,
   },
-  // ... autres projets
+  {
+    id: '2',
+    title: 'SUPCHAT - Messagerie collaborative',
+    description: "Plateforme de messagerie instantanée sécurisée temps réel.",
+    longDescription: "Messagerie avec workspaces, canaux publics/privés, gestion des permissions, partage de fichiers et système d'invitations.",
+    technologies: ['React', 'React Native', 'Node.js', 'MongoDB', 'Socket.IO', 'JWT'],
+    image: '/supchat.jpg',
+    github: 'https://github.com/theayoub49/supchat',
+    featured: true,
+  },
+  {
+    id: '3',
+    title: 'Site Web Mairie - WordPress',
+    description: "Conception et développement d'un site institutionnel sous WordPress.",
+    longDescription: "Site web complet pour une mairie avec intégration de plugins avancés, optimisation SEO et gestion de contenu dynamique.",
+    technologies: ['WordPress', 'PHP', 'MySQL', 'JavaScript', 'HTML/CSS'],
+    image: '/mairie.jpg',
+    featured: false,
+  },
+  {
+    id: '4',
+    title: 'Clone YouTube - Intégration API',
+    description: "Site web simulant YouTube avec intégration de l'API YouTube.",
+    longDescription: "Développement d'une interface responsive avec récupération automatisée des données vidéo et système de streaming intégré.",
+    technologies: ['PHP', 'MySQL', 'JavaScript', 'API YouTube', 'Bootstrap'],
+    image: '/youtube-clone.jpg',
+    github: 'https://github.com/theayoub49/youtube-clone',
+    featured: false,
+  },
 ]
 
 export const TERMINAL_COMMANDS = {

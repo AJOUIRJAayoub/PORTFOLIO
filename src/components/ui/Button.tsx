@@ -2,15 +2,19 @@ import { forwardRef } from 'react'
 import { motion } from 'framer-motion'
 import { cn } from '@/utils/helpers'
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
   href?: string
   children: React.ReactNode
+  className?: string
+  onClick?: () => void
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', href, children, ...props }, ref) => {
+  ({ className, variant = 'primary', size = 'md', href, children, onClick, type = 'button', disabled, ...props }, ref) => {
     const baseStyles = 'inline-flex items-center justify-center font-semibold transition-all duration-200 rounded-lg'
     
     const variants = {
@@ -26,15 +30,21 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'px-8 py-4 text-lg',
     }
 
-    const classes = cn(baseStyles, variants[variant], sizes[size], className)
+    const classes = cn(
+      baseStyles, 
+      variants[variant], 
+      sizes[size], 
+      disabled && 'opacity-50 cursor-not-allowed',
+      className
+    )
 
     if (href) {
       return (
         <motion.a
           href={href}
           className={classes}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: disabled ? 1 : 1.05 }}
+          whileTap={{ scale: disabled ? 1 : 0.95 }}
         >
           {children}
         </motion.a>
@@ -44,9 +54,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <motion.button
         ref={ref}
+        type={type}
         className={classes}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        onClick={onClick}
+        disabled={disabled}
+        whileHover={{ scale: disabled ? 1 : 1.05 }}
+        whileTap={{ scale: disabled ? 1 : 0.95 }}
         {...props}
       >
         {children}

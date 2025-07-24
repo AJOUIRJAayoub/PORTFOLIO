@@ -8,9 +8,9 @@ export default function HeroSection() {
   const typedText = useTypingEffect("Développeur Full Stack", 100, 500)
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com/yourusername', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com/in/yourusername', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/AJOUIRJAayoub', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/ayoub-ajouirja-9116ab253/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:ayoub.ajouirja@supinfo.com', label: 'Email' },
   ]
 
   return (
@@ -158,7 +158,7 @@ export default function HeroSection() {
                 <div className="p-6 font-mono text-sm">
                   <pre className="text-dark-300">
                     <code>{`const developer = {
-  name: 'Votre Nom',
+  name: 'AJOUIRJA Ayoub',
   role: 'Full Stack Developer',
   skills: ['React', 'Node.js', 'TypeScript'],
   passion: 'Building the future of web',
