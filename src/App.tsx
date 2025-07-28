@@ -70,9 +70,11 @@ function App() {
       </Suspense>
       
       <Layout>
-        <Suspense fallback={<SectionLoader />}>
-          <HeroSection />
-        </Suspense>
+        <div id="home">
+          <Suspense fallback={<SectionLoader />}>
+            <HeroSection />
+          </Suspense>
+        </div>
         
         <Suspense fallback={<SectionLoader />}>
           <AboutSection />

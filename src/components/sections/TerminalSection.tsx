@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Terminal as TerminalIcon, ChevronRight } from 'lucide-react'
-import { TERMINAL_COMMANDS } from '@/utils/constants'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 
 interface CommandHistory {
@@ -10,16 +9,65 @@ interface CommandHistory {
   timestamp: Date
 }
 
+const TERMINAL_COMMANDS = {
+  help: {
+    output: `Commandes disponibles :
+  • about     - À propos de moi
+  • skills    - Mes compétences (en apprentissage !)
+  • projects  - Mes projets académiques
+  • contact   - Mes coordonnées
+  • clear     - Effacer le terminal
+  • whoami    - Qui êtes-vous ?
+  • motivation - Ma motivation
+  • cv        - Télécharger mon CV`
+  },
+  about: {
+    output: `Je suis Ayoub AJOUIRJA, étudiant en 4ème année à SUPINFO Lyon.
+Je recherche une alternance en développement web pour novembre 2025.
+Passionné par la tech, j'ai encore beaucoup à apprendre et c'est ce qui me motive !`
+  },
+  skills: {
+    output: `Technologies que j'ai découvertes :
+• Frontend : HTML/CSS (70%), JavaScript (60%), React (50%)
+• Backend : PHP (65%), Node.js (45%)
+• Outils : Git (55%), WordPress (70%)
+• En cours d'apprentissage : Docker, TypeScript, Tests
+
+⚠️ Je suis encore étudiant, ces pourcentages représentent ma familiarité, pas une expertise !`
+  },
+  motivation: {
+    output: `Ma motivation en 3 points :
+1. 🎓 J'ai soif d'apprendre et de progresser
+2. 💪 Je suis prêt à m'investir à 200% dans mon alternance
+3. 🚀 J'ai hâte de contribuer à de vrais projets !
+
+Ce qui me motive : transformer mes connaissances théoriques en compétences pratiques.`
+  },
+  cv: {
+    output: `📄 Téléchargement du CV...
+Disponible sur demande par email : ayoub.ajouirja@supinfo.com`
+  },
+  contact: {
+    output: `📧 Email : ayoub.ajouirja@supinfo.com
+📱 Téléphone : 07 67 80 62 05
+📍 Localisation : Jayat (01340)
+🚗 Mobilité : 150km autour de Jayat`
+  },
+  whoami: {
+    output: `Vous êtes un recruteur à la recherche d'un alternant motivé ? 
+Parfait, vous êtes au bon endroit ! 😊`
+  }
+}
+
 export default function TerminalSection() {
   const [input, setInput] = useState('')
   const [history, setHistory] = useState<CommandHistory[]>([
     {
       command: 'welcome',
-      output: "Bienvenue dans mon terminal interactif ! 🚀\nTapez 'help' pour voir les commandes disponibles.",
+      output: "Bienvenue dans mon terminal ! 🎓\nJe suis étudiant et ce terminal reflète mon niveau actuel.\nTapez 'help' pour voir les commandes disponibles.",
       timestamp: new Date()
     }
   ])
-  const [isMatrixMode, setIsMatrixMode] = useState(false)
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
   
@@ -37,44 +85,24 @@ export default function TerminalSection() {
     const trimmedCmd = cmd.trim().toLowerCase()
     let output = ''
 
-    switch (trimmedCmd) {
-      case 'help':
-        output = TERMINAL_COMMANDS.help.output
-        break
-      case 'about':
-        output = TERMINAL_COMMANDS.about.output
-        break
-      case 'skills':
-        output = TERMINAL_COMMANDS.skills.output
-        break
-      case 'projects':
-        output = "Redirection vers la section projets..."
-        setTimeout(() => {
-          document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-        }, 500)
-        break
-      case 'contact':
-        output = "Email: your.email@example.com\nLinkedIn: linkedin.com/in/yourprofile\nGitHub: github.com/yourusername"
-        break
-      case 'clear':
-        setHistory([])
-        setCommandHistory([])
-        return
-      case 'theme':
-        output = "Changement de thème... (fonctionnalité à venir)"
-        break
-      case 'matrix':
-        setIsMatrixMode(!isMatrixMode)
-        output = isMatrixMode ? "Mode Matrix désactivé" : "Mode Matrix activé ! 🟢"
-        break
-      case 'date':
-        output = new Date().toLocaleString('fr-FR')
-        break
-      case 'whoami':
-        output = "Vous êtes un visiteur curieux explorant mon portfolio ! 👨‍💻"
-        break
-      default:
-        output = `Commande '${cmd}' non reconnue. Tapez 'help' pour voir les commandes disponibles.`
+    if (trimmedCmd === 'clear') {
+      setHistory([])
+      setCommandHistory([])
+      return
+    }
+
+    if (TERMINAL_COMMANDS[trimmedCmd as keyof typeof TERMINAL_COMMANDS]) {
+      output = TERMINAL_COMMANDS[trimmedCmd as keyof typeof TERMINAL_COMMANDS].output
+    } else if (trimmedCmd === 'date') {
+      output = new Date().toLocaleString('fr-FR')
+    } else if (trimmedCmd === 'projects') {
+      output = "Redirection vers mes projets académiques..."
+      setTimeout(() => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+      }, 500)
+    } else {
+      output = `Commande '${cmd}' non reconnue. Tapez 'help' pour voir les commandes disponibles.
+PS: Je suis encore en train d'apprendre, ce terminal aussi ! 😅`
     }
 
     const newEntry: CommandHistory = {
@@ -122,7 +150,8 @@ export default function TerminalSection() {
         >
           <div className="flex items-center space-x-3 mb-8">
             <TerminalIcon className="w-8 h-8 text-primary-400" />
-            <h2 className="text-4xl font-bold text-white">Terminal Interactif</h2>
+            <h2 className="text-4xl font-bold text-white">Terminal Étudiant</h2>
+            <span className="text-sm text-gray-400">(Version basique 😊)</span>
           </div>
 
           <motion.div
@@ -138,22 +167,15 @@ export default function TerminalSection() {
                 <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                 <div className="w-3 h-3 bg-green-500 rounded-full" />
               </div>
-              <span className="text-dark-400 text-sm font-mono">guest@portfolio:~$</span>
+              <span className="text-gray-400 text-sm font-mono">etudiant@supinfo:~$</span>
             </div>
 
             {/* Terminal Body */}
             <div
               ref={terminalRef}
-              className="p-6 h-[400px] overflow-y-auto font-mono text-sm relative"
+              className="p-6 h-[400px] overflow-y-auto font-mono text-sm"
               onClick={() => inputRef.current?.focus()}
             >
-              {/* Matrix Effect */}
-              {isMatrixMode && (
-                <div className="absolute inset-0 pointer-events-none">
-                  <MatrixRain />
-                </div>
-              )}
-
               {/* Command History */}
               <div className="space-y-4">
                 {history.map((entry, index) => (
@@ -162,7 +184,7 @@ export default function TerminalSection() {
                       <ChevronRight className="w-4 h-4 text-primary-400 mt-0.5 flex-shrink-0" />
                       <span className="text-primary-400">{entry.command}</span>
                     </div>
-                    <pre className="text-dark-300 ml-6 mt-1 whitespace-pre-wrap">
+                    <pre className="text-gray-300 ml-6 mt-1 whitespace-pre-wrap">
                       {entry.output}
                     </pre>
                   </div>
@@ -193,60 +215,5 @@ export default function TerminalSection() {
         </motion.div>
       </div>
     </section>
-  )
-}
-
-// Matrix Rain Effect Component
-function MatrixRain() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
-
-    const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}".split("")
-    const fontSize = 10
-    const columns = canvas.width / fontSize
-    const drops: number[] = []
-
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1
-    }
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-      ctx.fillStyle = '#0F0'
-      ctx.font = fontSize + 'px monospace'
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = matrix[Math.floor(Math.random() * matrix.length)]
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
-        }
-        drops[i]++
-      }
-    }
-
-    const interval = setInterval(draw, 35)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 opacity-20"
-      style={{ width: '100%', height: '100%' }}
-    />
   )
 }

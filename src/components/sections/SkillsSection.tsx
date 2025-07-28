@@ -14,18 +14,21 @@ export default function SkillsSection() {
       icon: Code,
       skills: SKILLS.frontend,
       color: 'from-blue-500 to-cyan-500',
+      description: 'Technologies que j\'ai utilisées en cours'
     },
     {
       title: 'Backend',
       icon: Server,
       skills: SKILLS.backend,
       color: 'from-purple-500 to-pink-500',
+      description: 'Langages vus durant ma formation'
     },
     {
       title: 'Outils & DevOps',
       icon: Wrench,
       skills: SKILLS.tools,
       color: 'from-orange-500 to-red-500',
+      description: 'Outils découverts en projets'
     },
   ]
 
@@ -39,8 +42,11 @@ export default function SkillsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-bold text-white mb-4">Compétences</h2>
-          <p className="text-xl text-dark-300 max-w-3xl mx-auto">
-            Technologies et outils que je maîtrise pour créer des applications exceptionnelles
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Technologies que j'ai eu l'occasion de découvrir durant mes études
+          </p>
+          <p className="text-sm text-gray-400 mt-2">
+            ⚠️ Attention : Je suis encore en apprentissage sur toutes ces technologies !
           </p>
         </motion.div>
 
@@ -53,12 +59,13 @@ export default function SkillsSection() {
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
             >
               <Card className="p-6 h-full">
-                <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center space-x-3 mb-4">
                   <div className={`p-3 rounded-lg bg-gradient-to-br ${category.color}`}>
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
+                <p className="text-sm text-gray-400 mb-6">{category.description}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, index) => (
@@ -80,7 +87,7 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Skill Bars */}
+        {/* Skill Bars avec niveaux réalistes */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -88,21 +95,28 @@ export default function SkillsSection() {
           className="mt-16"
         >
           <Card className="p-8">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Niveau d'expertise
+            <h3 className="text-2xl font-bold text-white mb-4 text-center">
+              Mon niveau de familiarité
             </h3>
+            <p className="text-center text-gray-400 mb-8">
+              Ces pourcentages représentent à quel point je suis à l'aise avec chaque technologie
+            </p>
             <div className="space-y-6">
               {[
-                { name: 'React / TypeScript', level: 85 },
-                { name: 'PHP / Symfony', level: 80 },
-                { name: 'Node.js / Express', level: 75 },
-                { name: 'WordPress', level: 90 },
-                { name: 'Docker / Cloud', level: 70 },
+                { name: 'HTML/CSS', level: 70, note: 'Bases solides' },
+                { name: 'JavaScript', level: 60, note: 'En progression' },
+                { name: 'PHP', level: 65, note: 'Utilisé en stages' },
+                { name: 'MySQL', level: 60, note: 'Bases de données' },
+                { name: 'WordPress', level: 35, note: 'Notions basiques' },
+                { name: 'React', level: 40, note: 'En apprentissage' },
+                { name: 'Node.js', level: 35, note: 'Débutant' },
+                { name: 'Git', level: 50, note: 'Usage basique' },
+                { name: 'Docker', level: 20, note: 'Très débutant' },
               ].map((skill, index) => (
                 <div key={skill.name}>
                   <div className="flex justify-between mb-2">
-                    <span className="text-dark-300 font-medium">{skill.name}</span>
-                    <span className="text-primary-400 font-mono">{skill.level}%</span>
+                    <span className="text-gray-300 font-medium">{skill.name}</span>
+                    <span className="text-gray-400 text-sm">{skill.note}</span>
                   </div>
                   <div className="h-2 bg-dark-700 rounded-full overflow-hidden">
                     <motion.div

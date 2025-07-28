@@ -2,37 +2,47 @@ export interface Project {
   id: string
   title: string
   description: string
-  longDescription?: string
+  longDescription: string
   technologies: string[]
-  image?: string
-  github?: string
-  demo?: string
-  featured?: boolean
-}
-
-export interface Skill {
-  name: string
-  level: number
-  category: 'frontend' | 'backend' | 'tools' | 'other'
+  image: string | null
+  github?: string | null
+  demo?: string | null
+  featured: boolean
+  status: string
 }
 
 export interface Experience {
-  id: string
+  id: number
   company: string
   position: string
   duration: string
-  description: string[]
+  duration_short: string
+  tasks: string[]
   technologies: string[]
 }
 
-export interface TerminalCommand {
-  command: string
+export interface Formation {
+  id: number
+  school: string
+  degree: string
+  duration: string
   description: string
-  action: () => string | void
+  current: boolean
+  note?: string
 }
 
 export interface NavLink {
   href: string
   label: string
-  icon?: React.ReactNode
+}
+
+export interface TerminalCommand {
+  output: string
+}
+
+export interface Skills {
+  frontend: string[]
+  backend: string[]
+  tools: string[]
+  autres: string[]
 }

@@ -5,7 +5,7 @@ import AnimatedText from '@/components/ui/AnimatedText'
 import { useTypingEffect } from '@/hooks/useTypingEffect'
 
 export default function HeroSection() {
-  const typedText = useTypingEffect("Développeur Full Stack", 100, 500)
+  const typedText = useTypingEffect("Étudiant Développeur", 100, 500)
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/AJOUIRJAayoub', label: 'GitHub' },
@@ -57,7 +57,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              &lt;developer&gt;
+              &lt;étudiant_4ème_année&gt;
             </motion.p>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
@@ -73,8 +73,8 @@ export default function HeroSection() {
             </h1>
             
             <AnimatedText
-              text="Spécialisé dans la création d'applications web modernes et performantes. Expert en React, Node.js, et architectures cloud-native."
-              className="text-xl text-dark-300 mb-8 leading-relaxed"
+              text="En Master Cloud & Mobile à SUPINFO Lyon. Je recherche une alternance pour novembre 2025 afin de mettre en pratique mes connaissances et apprendre auprès de professionnels."
+              className="text-xl text-gray-300 mb-8 leading-relaxed"
               delay={0.4}
             />
 
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 size="lg"
                 className="group"
               >
-                Voir mes projets
+                Voir mes projets académiques
                 <motion.span
                   className="inline-block ml-2"
                   animate={{ x: [0, 5, 0] }}
@@ -120,7 +120,7 @@ export default function HeroSection() {
                 <motion.a
                   key={social.label}
                   href={social.href}
-                  className="text-dark-400 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
                   whileHover={{ y: -5 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -153,19 +153,20 @@ export default function HeroSection() {
                     <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                     <div className="w-3 h-3 bg-green-500 rounded-full" />
                   </div>
-                  <span className="text-dark-400 text-sm font-mono ml-4">developer.js</span>
+                  <span className="text-gray-400 text-sm font-mono ml-4">etudiant.js</span>
                 </div>
                 <div className="p-6 font-mono text-sm">
-                  <pre className="text-dark-300">
-                    <code>{`const developer = {
-  name: 'AJOUIRJA Ayoub',
-  role: 'Full Stack Developer',
-  skills: ['React', 'Node.js', 'TypeScript'],
-  passion: 'Building the future of web',
-  available: true
+                  <pre className="text-gray-300">
+                    <code>{`const etudiant = {
+  nom: 'AJOUIRJA Ayoub',
+  annee: '4ème année Master',
+  ecole: 'SUPINFO Lyon',
+  competences: ['En apprentissage'],
+  recherche: 'Alternance Nov 2025',
+  motivation: '200%'
 };
 
-// Let's build something amazing together!`}</code>
+// Prêt à apprendre et progresser !`}</code>
                   </pre>
                 </div>
               </motion.div>
@@ -180,7 +181,7 @@ export default function HeroSection() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <ChevronDown className="w-6 h-6 text-dark-400" />
+        <ChevronDown className="w-6 h-6 text-gray-400" />
       </motion.div>
     </section>
   )

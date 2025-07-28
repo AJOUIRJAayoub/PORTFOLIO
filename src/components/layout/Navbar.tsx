@@ -33,7 +33,7 @@ export default function Navbar() {
           >
             <Code2 className="w-8 h-8 text-primary-400" />
             <span className="font-mono text-xl font-bold text-white">
-              DevPro
+              AJOUIRJA Ayoub
             </span>
           </motion.a>
 
@@ -43,7 +43,7 @@ export default function Navbar() {
               <motion.a
                 key={link.href}
                 href={link.href}
-                className="relative text-dark-300 hover:text-primary-400 transition-colors duration-200 font-medium group"
+                className="relative text-gray-300 hover:text-primary-400 transition-colors duration-200 font-medium group"
                 whileHover={{ y: -2 }}
               >
                 <span className="relative z-10">{link.label}</span>
@@ -70,7 +70,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-dark-300 hover:text-white p-2"
+            className="md:hidden text-gray-300 hover:text-white p-2"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -116,7 +116,7 @@ export default function Navbar() {
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: index * 0.1 }}
-                    className="block px-3 py-2 text-dark-300 hover:text-primary-400 transition-colors duration-200"
+                    className="block px-3 py-2 text-gray-300 hover:text-primary-400 transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
