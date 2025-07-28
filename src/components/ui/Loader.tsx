@@ -20,7 +20,7 @@ export default function Loader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[100] bg-dark-900 flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-gray-900 flex items-center justify-center"
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -38,7 +38,7 @@ export default function Loader() {
             
             <motion.div className="space-y-2">
               <h2 className="text-2xl font-bold text-white">Chargement...</h2>
-              <div className="w-48 h-1 bg-dark-800 rounded-full overflow-hidden">
+              <div className="w-48 h-1 bg-gray-800 rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-to-r from-primary-400 to-cyan-400"
                   initial={{ x: "-100%" }}

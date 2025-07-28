@@ -9,9 +9,9 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant = 'default', hover = true, children, ...props }, ref) => {
     const variants = {
-      default: 'bg-dark-800 border-dark-700',
-      glass: 'bg-dark-800/50 backdrop-blur-md border-dark-700/50',
-      gradient: 'bg-gradient-to-br from-dark-800 to-dark-900 border-dark-700',
+      default: 'bg-gray-800 border-gray-700',
+      glass: 'bg-gray-800/50 backdrop-blur-md border-gray-700/50',
+      gradient: 'bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700',
     }
 
     const baseStyles = 'rounded-lg border shadow-lg overflow-hidden'

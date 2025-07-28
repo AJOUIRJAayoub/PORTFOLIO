@@ -14,8 +14,8 @@ export default function Badge({
 }: BadgeProps) {
   const variants = {
     primary: 'bg-primary-500/20 text-primary-400 border-primary-500/30',
-    secondary: 'bg-dark-700 text-dark-200 border-dark-600',
-    outline: 'bg-transparent text-dark-300 border-dark-600',
+    secondary: 'bg-gray-700 text-gray-200 border-gray-600',
+    outline: 'bg-transparent text-gray-300 border-gray-600',
   }
 
   const sizes = {

@@ -11,14 +11,14 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-dark-950 border-t border-dark-800 py-8 mt-20">
+    <footer className="bg-gray-950 border-t border-gray-800 py-8 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-center md:text-left">
-            <p className="text-dark-400 flex items-center justify-center md:justify-start">
+            <p className="text-gray-400 flex items-center justify-center md:justify-start">
               Fait avec <Heart className="w-4 h-4 text-red-500 mx-1" /> par Ayoub AJOUIRJA
             </p>
-            <p className="text-dark-500 text-sm mt-1">
+            <p className="text-gray-500 text-sm mt-1">
               © {currentYear} Tous droits réservés
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function Footer() {
               <motion.a
                 key={social.label}
                 href={social.href}
-                className="text-dark-400 hover:text-primary-400 transition-colors duration-200"
+                className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
                 whileHover={{ y: -3 }}
                 aria-label={social.label}
               >
