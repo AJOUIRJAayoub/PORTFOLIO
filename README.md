@@ -5,6 +5,9 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5.0.0-646CFF?style=flat-square&logo=vite)](https://vitejs.dev/)
 
+**[Voir le portfolio en ligne : www.ayoubajouirja.fr](https://www.ayoubajouirja.fr)**
+
+
 Portfolio personnel d'un étudiant en 4ème année à SUPINFO Lyon, recherchant une alternance en développement Full-Stack pour novembre 2025.
 
 ## Table des matières
