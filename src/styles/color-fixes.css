@@ -1,0 +1,154 @@
+/* CORRECTIONS URGENTES POUR LA LISIBILITÉ */
+
+/* Forcer les couleurs de texte pour une meilleure lisibilité */
+body * {
+  color: #e5e7eb !important; /* gray-200 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Textes spécifiques */
+.text-dark-200,
+.text-dark-300,
+.text-dark-400,
+.text-dark-500 {
+  color: #d1d5db !important; /* gray-300 */
+}
+
+/* Titres et textes importants */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-primary-400 {
+  color: #4ade80 !important;
+}
+
+.text-primary-500 {
+  color: #22c55e !important;
+}
+
+/* Paragraphes et descriptions */
+p, span {
+  color: #d1d5db !important; /* gray-300 */
+}
+
+/* Badges et labels */
+.text-gray-400,
+.text-gray-500 {
+  color: #9ca3af !important;
+}
+
+/* Backgrounds */
+.bg-dark-700 {
+  background-color: #374151 !important;
+}
+
+.bg-dark-800 {
+  background-color: #1f2937 !important;
+}
+
+.bg-dark-900 {
+  background-color: #111827 !important;
+}
+
+.bg-dark-950 {
+  background-color: #030712 !important;
+}
+
+/* Borders */
+.border-dark-600 {
+  border-color: #4b5563 !important;
+}
+
+.border-dark-700 {
+  border-color: #374151 !important;
+}
+
+.border-dark-800 {
+  border-color: #1f2937 !important;
+}
+
+/* Cards et sections */
+.bg-dark-800\/95 {
+  background-color: rgba(31, 41, 55, 0.95) !important;
+}
+
+.bg-dark-800\/50 {
+  background-color: rgba(31, 41, 55, 0.5) !important;
+}
+
+/* Navigation */
+nav a {
+  color: #d1d5db !important;
+}
+
+nav a:hover {
+  color: #4ade80 !important;
+}
+
+/* Boutons */
+button {
+  color: #ffffff !important;
+}
+
+/* Terminal */
+.font-mono {
+  color: #e5e7eb !important;
+}
+
+/* Descriptions de projets */
+.card p,
+.card span {
+  color: #d1d5db !important;
+}
+
+/* Badges dans les projets */
+.card .badge {
+  color: #d1d5db !important;
+}
+
+/* Fix pour les sections sombres */
+section {
+  opacity: 1 !important;
+}
+
+/* Empêcher l'assombrissement progressif */
+* {
+  animation-fill-mode: forwards !important;
+}
+
+/* S'assurer que les animations ne cachent pas le contenu */
+[class*="animate-"] {
+  opacity: 1 !important;
+}
+
+/* Améliorer le contraste global */
+.container * {
+  opacity: 1 !important;
+}
+
+/* Fix spécifique pour la section projets */
+#projects p {
+  color: #d1d5db !important;
+}
+
+#projects h3 {
+  color: #ffffff !important;
+}
+
+/* Technologies badges */
+.bg-gray-700 {
+  background-color: #374151 !important;
+}
+
+.text-gray-200 {
+  color: #e5e7eb !important;
+}
+
+/* Hover states */
+*:hover {
+  opacity: 1 !important;
+}
