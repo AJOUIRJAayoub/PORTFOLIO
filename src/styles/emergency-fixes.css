@@ -1,0 +1,84 @@
+/* CORRECTION D'URGENCE - FORCE LA LISIBILITÉ */
+
+/* TOUS LES TEXTES EN GRIS CLAIR PAR DÉFAUT */
+body, 
+body * {
+  color: #e5e7eb !important; /* gray-200 */
+}
+
+/* TITRES EN BLANC */
+h1, h2, h3, h4, h5, h6,
+.text-white {
+  color: #ffffff !important;
+}
+
+/* TEXTES PRIMAIRES EN VERT */
+.text-primary-400,
+.text-primary-500,
+.text-primary-600 {
+  color: #4ade80 !important;
+}
+
+/* PARAGRAPHES ET DESCRIPTIONS */
+p, span, li, div {
+  color: #d1d5db !important; /* gray-300 */
+}
+
+/* NAVIGATION */
+nav a {
+  color: #d1d5db !important;
+}
+
+nav a:hover {
+  color: #4ade80 !important;
+}
+
+/* CARDS ET SECTIONS */
+.card p,
+.card span,
+.card div {
+  color: #d1d5db !important;
+}
+
+/* BACKGROUNDS CORRIGÉS */
+.bg-dark-700 { background-color: #374151 !important; }
+.bg-dark-800 { background-color: #1f2937 !important; }
+.bg-dark-900 { background-color: #111827 !important; }
+.bg-dark-950 { background-color: #030712 !important; }
+
+/* BORDERS CORRIGÉS */
+.border-dark-600 { border-color: #4b5563 !important; }
+.border-dark-700 { border-color: #374151 !important; }
+.border-dark-800 { border-color: #1f2937 !important; }
+
+/* FORCER L'OPACITÉ */
+* {
+  opacity: 1 !important;
+}
+
+/* EMPÊCHER L'ASSOMBRISSEMENT */
+section,
+div,
+article,
+main {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* TERMINAL */
+.font-mono,
+pre,
+code {
+  color: #e5e7eb !important;
+}
+
+/* BADGES */
+.badge {
+  color: #e5e7eb !important;
+}
+
+/* HOVER STATES */
+*:hover {
+  opacity: 1 !important;
+  filter: none !important;
+}

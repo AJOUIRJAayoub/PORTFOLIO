@@ -19,8 +19,20 @@ export default {
           800: '#166534',
           900: '#14532d',
         },
-        // Utilisation des couleurs gray de Tailwind par défaut
-        // Plus besoin de dark custom
+        // ON REMPLACE LES COULEURS DARK PAR DES GRAY CLAIRES
+        dark: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',   // text-dark-200 sera maintenant gris clair
+          300: '#d1d5db',   // text-dark-300 sera maintenant gris clair
+          400: '#9ca3af',   // text-dark-400 sera maintenant gris moyen
+          500: '#6b7280',   // text-dark-500 sera maintenant gris moyen
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+          950: '#030712',
+        }
       },
       fontFamily: {
         'mono': ['JetBrains Mono', 'Fira Code', 'monospace'],
