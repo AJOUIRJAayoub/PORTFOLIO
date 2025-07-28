@@ -1,4 +1,3 @@
-```markdown
 # Portfolio - Ayoub AJOUIRJA
 
 [![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
@@ -169,9 +168,8 @@ portfolio/
 ### Disponibilités
 - **Alternance :** À partir du 3 novembre 2025 (durée 24 mois)
 - **Rythme :** 1 semaine entreprise / 1 semaine formation
-- **Stage préalable possible :** 27 août - 26 septembre 2025
+- **Stage préalable possible :** 25 août - 26 septembre 2025
 
 ---
 
 Copyright © 2025 Ayoub AJOUIRJA. Tous droits réservés.
-```
